@@ -13,7 +13,8 @@ import java.util.List;
 public class MemberController {
 
     private final MemberService memberService;
-    @GetMapping("/members")
+
+    @GetMapping
     public ResponseEntity<List<MemberDto>> getMember(
             @RequestParam("filterNames") List<String> filterNames
     ) {

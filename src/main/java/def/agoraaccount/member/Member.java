@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Member {
 
     @Id @GeneratedValue
-    private long id;
+    private Long id;
     @NotNull
     private String nickName;
     @NotNull
