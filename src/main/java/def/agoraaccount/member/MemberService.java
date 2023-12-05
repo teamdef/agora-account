@@ -21,4 +21,11 @@ public class MemberService {
 
         return ResponseEntity.ok(members);
     }
+
+    public MemberDto findMember(Long memberId) throws Exception{
+
+        Member member = memberRepo.findById(memberId).orElseThrow(ClassNotFoundException::new);
+
+        return new MemberDto(member);
+    }
 }

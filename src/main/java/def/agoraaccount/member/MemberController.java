@@ -2,13 +2,12 @@ package def.agoraaccount.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/members")
+@RestController
+@RequestMapping("/members")
 @RequiredArgsConstructor
 public class MemberController {
 
@@ -19,5 +18,12 @@ public class MemberController {
             @RequestParam("filterNames") List<String> filterNames
     ) {
         return memberService.findFilteredMembers(filterNames);
+    }
+
+    @GetMapping("/{memberId}")
+    public ResponseEntity<MemberDto> getMemberDetail(
+            @PathVariable Long memberId) throws Exception {
+
+        return ResponseEntity.ok(memberService.findMember(memberId));
     }
 }
