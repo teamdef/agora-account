@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/members")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class MemberController {
 
@@ -15,7 +16,7 @@ public class MemberController {
 
     @GetMapping
     public ResponseEntity<List<MemberDto>> getMember(
-            @RequestParam("filterNames") List<String> filterNames
+            @RequestParam(value = "filterNames", defaultValue = "") List<String> filterNames
     ) {
         return memberService.findFilteredMembers(filterNames);
     }

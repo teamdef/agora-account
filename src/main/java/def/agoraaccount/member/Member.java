@@ -17,5 +17,7 @@ public class Member {
     @NotNull
     private String nickname;
     @NotNull
-    private String img;
+    private String name;
+    @NotNull
+    private String profileImg;
 }

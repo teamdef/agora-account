@@ -7,11 +7,13 @@ public class MemberDto {
 
     private Long id;
     private String nickname;
-    private String img;
+    private String name;
+    private String profileImg;
 
     public MemberDto(Member member) {
         this.id = member.getId();
         this.nickname = member.getNickname();
-        this.img = member.getImg();
+        this.profileImg = member.getProfileImg();
+        this.name = member.getName();
     }
 }
