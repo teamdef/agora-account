@@ -15,7 +15,7 @@ public class Member {
     @Id @GeneratedValue
     private Long id;
     @NotNull
-    private String nickName;
+    private String nickname;
     @NotNull
     private String img;
 }

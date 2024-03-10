@@ -6,12 +6,12 @@ import lombok.Getter;
 public class MemberDto {
 
     private Long id;
-    private String nickName;
+    private String nickname;
     private String img;
 
     public MemberDto(Member member) {
         this.id = member.getId();
-        this.nickName = member.getNickName();
+        this.nickname = member.getNickname();
         this.img = member.getImg();
     }
 }

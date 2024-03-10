@@ -15,7 +15,7 @@ public class MemberService {
     public ResponseEntity<List<MemberDto>> findFilteredMembers(List<String> filterNames) {
 
         List<MemberDto> members = memberRepo.findAll().stream()
-                .filter(member -> !filterNames.contains(member.getNickName()))
+                .filter(member -> !filterNames.contains(member.getNickname()))
                 .map(MemberDto::new)
                 .collect(Collectors.toList());
 
