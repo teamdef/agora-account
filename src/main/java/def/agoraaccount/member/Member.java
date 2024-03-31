@@ -20,4 +20,6 @@ public class Member {
     private String name;
     @NotNull
     private String profileImg;
+    @NotNull
+    private String password;
 }
