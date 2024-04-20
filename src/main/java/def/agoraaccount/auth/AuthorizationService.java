@@ -11,8 +11,8 @@ public class AuthorizationService {
 
     private final JwtUtil jwtUtil;
 
-    public ResponseEntity<String> login(Member member) {
+    public ResponseEntity<AuthResponse> login(Member member) {
 
-        return ResponseEntity.ok(jwtUtil.generateToken(member));
+        return ResponseEntity.ok(new AuthResponse(jwtUtil.generateToken(member)));
     }
 }

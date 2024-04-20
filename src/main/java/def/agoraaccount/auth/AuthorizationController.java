@@ -16,7 +16,7 @@ public class AuthorizationController {
     private final MemberService memberService;
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody AuthenticationRequest authenticationRequest) {
+    public ResponseEntity<AuthResponse> login(@RequestBody AuthenticationRequest authenticationRequest) {
 
         Member member = memberService.findEnrollmember(authenticationRequest);
 
